@@ -1,0 +1,36 @@
+BLS12381 Computation Cost Test
+
+Testing Field operations for 10000 times...
+Field operations completed.
+Average time for Field operations:
+Add: 25ns
+Sub: 25ns
+Neg: 20ns
+Mul: 36ns
+Div: 2.57µs
+Inv: 2.524µs
+
+Testing G1,G2,Gt operations for 10000 times...
+G1,G2,Gt operations completed.
+Average time for G1,G2,Gt operations:
+G1 Add: 4.606µs
+G1 Sub: 3.819µs
+G1 Neg: 27ns
+G1 Mul: 87.697µs
+
+G2 Add: 5.301µs
+G2 Sub: 4.464µs
+G2 Neg: 27ns
+G2 Mul: 191.075µs
+
+Gt Mul: 2.301µs
+Gt Div: 8.846µs
+Gt Inv: 6.167µs
+Gt Exp: 636.181µs
+
+Testing Pairing operations for 10000 times...
+Pairing operations completed.
+Average time for Pairing operations:
+Pairing: 583.345µs
+
+BLS12381 Computation Cost Test Completed

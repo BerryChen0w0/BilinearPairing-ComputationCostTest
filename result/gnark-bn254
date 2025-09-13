@@ -1,0 +1,36 @@
+BN254 Computation Cost Test
+
+Testing Field operations for 10000 times...
+Field operations completed.
+Average time for Field operations:
+Add: 25ns
+Sub: 25ns
+Neg: 23ns
+Mul: 36ns
+Div: 2.59µs
+Inv: 2.534µs
+
+Testing G1,G2,Gt operations for 10000 times...
+G1,G2,Gt operations completed.
+Average time for G1,G2,Gt operations:
+G1 Add: 2.712µs
+G1 Sub: 2.057µs
+G1 Neg: 25ns
+G1 Mul: 54.534µs
+
+G2 Add: 3.009µs
+G2 Sub: 2.338µs
+G2 Neg: 26ns
+G2 Mul: 103.125µs
+
+Gt Mul: 1.365µs
+Gt Div: 5.177µs
+Gt Inv: 3.502µs
+Gt Exp: 380.91µs
+
+Testing Pairing operations for 10000 times...
+Pairing operations completed.
+Average time for Pairing operations:
+Pairing: 381.444µs
+
+BN254 Computation Cost Test Completed

@@ -1,0 +1,36 @@
+Starting Type A Computation Cost Test...
+
+Testing Field operations for 10000 times...
+Field operations completed.
+Average time for Field operations:
+Add: 216ns
+Sub: 143ns
+Neg: 128ns
+Mul: 200ns
+Div: 1.462µs
+Inv: 1.259µs
+
+Testing G1,G2,Gt operations for 10000 times...
+G1,G2,Gt operations completed.
+Average time for G1 operations:
+Add: 4.865µs
+Sub: 4.304µs
+Neg: 179ns
+Dot: 836.449µs
+Average time for G2 operations:
+Add: 4.271µs
+Sub: 4.259µs
+Neg: 155ns
+Dot: 824.753µs
+Average time for Gt operations:
+Mul: 786ns
+Div: 4.509µs
+Inv: 3.278µs
+Exp: 74.586µs
+
+Testing Pairing operation for 10000 times...
+Pairing operations completed.
+Average time for Pairing operation:
+Pairing: 523.865µs
+
+Type A Computation Cost Test Completed
