@@ -79,7 +79,7 @@ Test results are as follows:
 | $\mathbb{G}_1^{\cdot}$, `ScalarMultiplication()` | 54.534 µs  | 87.697 µs  |
 |                                                  |            |            |
 | $\mathbb{G}_2^+$, `Add()`                        | 3.009 µs   | 5.301 µs   |
-| $\mathbb{G}_2^-`, `Sub()`                        | 2.338 µs   | 4.464 µs   |
+| $\mathbb{G}_2^-$, `Sub()`                        | 2.338 µs   | 4.464 µs   |
 | $\mathbb{G}_2^{neg}$, `Neg()`                    | 26 ns      | 27 ns      |
 | $\mathbb{G}_2^{\cdot}$, `ScalarMultiplication()` | 103.125 µs | 191.075 µs |
 |                                                  |            |            |
@@ -111,17 +111,17 @@ Test results are as follows:
 |                                   |                |                            |              |
 | $\mathbb{G}_1^+$, `Add()`         | 4.865 µs       | 3.179 µs                   | 2.576 µs     |
 | $\mathbb{G}_1^-$, `Sub()`         | 4.304 µs       | 2.648 µs                   | 1.85 µs      |
-| $\mathbb{G}_1^{neg}`, `Neg()`     | 179 ns         | 268 ns                     | 174 ns       |
+| $\mathbb{G}_1^{neg}$, `Neg()`     | 179 ns         | 268 ns                     | 174 ns       |
 | $\mathbb{G}_1^{\cdot}$, `MulZn()` | 836.449 µs     | 463.295 µs                 | 325.381 µs   |
 |                                   |                |                            |              |
 | $\mathbb{G}_2^+$, `Add()`         | 4.271 µs       | 22.044 µs                  | 3.542 µs     |
-| $\mathbb{G}_2^-`, `Sub()`         | 4.259 µs       | 19.792 µs                  | 3.031 µs     |
-| $\mathbb{G}_2^{neg}`, `Neg()`     | 155 ns         | 272 ns                     | 172 ns       |
+| $\mathbb{G}_2^-$, `Sub()`         | 4.259 µs       | 19.792 µs                  | 3.031 µs     |
+| $\mathbb{G}_2^{neg}$, `Neg()`     | 155 ns         | 272 ns                     | 172 ns       |
 | $\mathbb{G}_2^{\cdot}$, `MulZn()` | 824.753 µs     | 3.789244 ms                | 665.947 µs   |
 |                                   |                |                            |              |
 | $\mathbb{G}_T^{\times}$, `Mul()`  | 786 ns         | 6.078 µs                   | 16.795 µs    |
-| $\mathbb{G}_T^{\div}`, `Div()`    | 4.509 µs       | 17.531 µs                  | 83.905 µs    |
-| $\mathbb{G}_T^{inv}`, `Invert()`  | 3.278 µs       | 10.803 µs                  | 63.739 µs    |
+| $\mathbb{G}_T^{\div}$, `Div()`    | 4.509 µs       | 17.531 µs                  | 83.905 µs    |
+| $\mathbb{G}_T^{inv}$, `Invert()`  | 3.278 µs       | 10.803 µs                  | 63.739 µs    |
 | $\mathbb{G}_T^{\exp}$, `PowZn()`  | 74.586 µs      | 875.686 µs                 | 2.73738 ms   |
 |                                   |                |                            |              |
 | $e(\cdot,\cdot)$, `Pair()`        | 523.865 µs     | 2.786758 ms                | 11.742492 ms |

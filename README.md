@@ -10,9 +10,9 @@
 
 ## 符号约定
 
-代数结构 $[S,+,\times]$ ，对应的加法求逆元为 $neg$ ，逆运算为 $-$ ；乘法求逆元为 $inv$ ，逆运算为 $\div$ 。用 $\cdot$ 表示加法群的标量乘法，$\exp$ 表示乘法群的指数运算（标量乘法）。
+代数结构 $[S,+,\times]$ ，对应的加法求逆元为 $neg$ ，逆运算为 $-$ ；乘法求逆元为 $inv$ ，逆运算为 $\div$ 。用 $\cdot$ 表示加法群的标量乘法， $\exp$ 表示乘法群的指数运算（标量乘法）。
 
-在密码学论文中，一般把 $e:\mathbb{G}_1 \times \mathbb{G}_2 \to \mathbb{G}_T$ 中的 $\mathbb{G}_1$ 和 $\mathbb{G}_2$ 写作加法群，$\mathbb{G}_T$ 群写作乘法群。 $e(a\cdot P,b\cdot Q)=e(P,Q)^{ab}$ 。本测试使用的代码库中，也都是这样规定的。
+在密码学论文中，一般把 $e:\mathbb{G}_1 \times \mathbb{G}_2 \to \mathbb{G}_T$ 中的 $\mathbb{G}_1$ 和 $\mathbb{G}_2$ 写作加法群， $\mathbb{G}_T$ 群写作乘法群。 $e(a\cdot P,b\cdot Q)=e(P,Q)^{ab}$ 。本测试使用的代码库中，也都是这样规定的。
 
 
 
@@ -63,7 +63,7 @@
 > * **做标量乘/多点运算** → 转成 Jacobian，内部快算；
 > * **结果输出/传输** → 转回仿射。
 
-> 在gnark-crypto库里面， $\mathbb{G}_1$ 和 $\mathbb{G}_2$ 分别在`g1.go`和`g2.go`里实现，实现为加法群。$\mathbb{G}_T$ 在`e12.go`中实现，这个e12本身是一个域，实现了加和乘两套计算的函数。我们在pairing里面用乘法的那一套【加法：Add, Sub，没有提供标量乘法和求加法逆元的函数。乘法：Mul, Div, Inverse, Exp】
+> 在gnark-crypto库里面， $\mathbb{G}_1$ 和 $\mathbb{G}_2$ 分别在`g1.go`和`g2.go`里实现，实现为加法群。 $\mathbb{G}_T$ 在`e12.go`中实现，这个e12本身是一个域，实现了加和乘两套计算的函数。我们在pairing里面用乘法的那一套【加法：Add, Sub，没有提供标量乘法和求加法逆元的函数。乘法：Mul, Div, Inverse, Exp】
 
 
 
