@@ -1,4 +1,4 @@
-对双线性映射$e:\mathbb{G}_1 \times \mathbb{G}_2 \to \mathbb{G}_T$中涉及的各种运算，测试其计算开销。运算包括：
+对双线性映射 $e:\mathbb{G}_1 \times \mathbb{G}_2 \to \mathbb{G}_T$ 中涉及的各种运算，测试其计算开销。运算包括：
 
 * 域上运算：加减乘除和求逆元
 * 群上运算：群加法、标量乘法（对乘法群就是群上乘法和群指数运算）
@@ -10,9 +10,9 @@
 
 ## 符号约定
 
-代数结构$[S,+,\times]$，对应的加法求逆元为$neg$，逆运算为$-$；乘法求逆元为$inv$，逆运算为$\div$。用$\cdot$表示加法群的标量乘法，$\exp$表示乘法群的指数运算（标量乘法）。
+代数结构 $[S,+,\times]$ ，对应的加法求逆元为 $neg$ ，逆运算为 $-$ ；乘法求逆元为 $inv$ ，逆运算为 $\div$ 。用 $\cdot$ 表示加法群的标量乘法，$\exp$ 表示乘法群的指数运算（标量乘法）。
 
-在密码学论文中，一般把$e:\mathbb{G}_1 \times \mathbb{G}_2 \to \mathbb{G}_T$中的$\mathbb{G}_1$和$\mathbb{G}_2$写作加法群，$\mathbb{G}_T$群写作乘法群。$e(a\cdot P,b\cdot Q)=e(P,Q)^{ab}$。本测试使用的代码库中，也都是这样规定的。
+在密码学论文中，一般把 $e:\mathbb{G}_1 \times \mathbb{G}_2 \to \mathbb{G}_T$ 中的 $\mathbb{G}_1$ 和 $\mathbb{G}_2$ 写作加法群，$\mathbb{G}_T$ 群写作乘法群。 $e(a\cdot P,b\cdot Q)=e(P,Q)^{ab}$ 。本测试使用的代码库中，也都是这样规定的。
 
 
 
@@ -63,7 +63,7 @@
 > * **做标量乘/多点运算** → 转成 Jacobian，内部快算；
 > * **结果输出/传输** → 转回仿射。
 
-> 在gnark-crypto库里面，$\mathbb{G}_1$和$\mathbb{G}_2$分别在`g1.go`和`g2.go`里实现，实现为加法群。$\mathbb{G}_T$在`e12.go`中实现，这个e12本身是一个域，实现了加和乘两套计算的函数。我们在pairing里面用乘法的那一套【加法：Add, Sub，没有提供标量乘法和求加法逆元的函数。乘法：Mul, Div, Inverse, Exp】
+> 在gnark-crypto库里面， $\mathbb{G}_1$ 和 $\mathbb{G}_2$ 分别在`g1.go`和`g2.go`里实现，实现为加法群。$\mathbb{G}_T$ 在`e12.go`中实现，这个e12本身是一个域，实现了加和乘两套计算的函数。我们在pairing里面用乘法的那一套【加法：Add, Sub，没有提供标量乘法和求加法逆元的函数。乘法：Mul, Div, Inverse, Exp】
 
 
 
@@ -103,7 +103,7 @@
 >
 > 对TypeA，TypeD和TypeF曲线做测试，参照官方文档配置参数：https://pkg.go.dev/github.com/Nik-U/pbc
 
-> 注：对$\mathbb{G}_1$和$\mathbb{G}_2$上的标量乘法，因为这两个群是加法群，因此应使用`MulZn()`函数。不过在代码中，因为`PowZn()`函数也被解释为“重复群运算”，因此，在$\mathbb{G}_1, \mathbb{G}_2$上使用`PowZn()`函数，会获得与`MulZn()`一样的结果。但是，我们不建议在$\mathbb{G}_1, \mathbb{G}_2$上使用`PowZn()`，因为这样的写法可能与$\mathbb{G}_T$上的群指数运算混淆，不利于阅读和维护代码。建议是，在$\mathbb{G}_1,\mathbb{G}_2$上使用`Add(), Sub(), Neg(), MulZn()`，在$\mathbb{G}_T$上使用`Mul(), Div(), Invert(), PowZn()`。
+> 注：对 $\mathbb{G}_1$ 和 $\mathbb{G}_2$ 上的标量乘法，因为这两个群是加法群，因此应使用`MulZn()`函数。不过在代码中，因为`PowZn()`函数也被解释为“重复群运算”，因此，在 $\mathbb{G}_1, \mathbb{G}_2$ 上使用`PowZn()`函数，会获得与`MulZn()`一样的结果。但是，我们不建议在 $\mathbb{G}_1, \mathbb{G}_2$ 上使用`PowZn()`，因为这样的写法可能与 $\mathbb{G}_T$ 上的群指数运算混淆，不利于阅读和维护代码。建议是，在 $\mathbb{G}_1,\mathbb{G}_2$ 上使用`Add(), Sub(), Neg(), MulZn()`，在 $\mathbb{G}_T$ 上使用`Mul(), Div(), Invert(), PowZn()`。
 
 
 
