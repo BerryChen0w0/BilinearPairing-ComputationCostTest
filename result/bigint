@@ -1,0 +1,64 @@
+Testing integer operations with 64 bits length for 100000 times...
+Addition: 70ns
+Subtraction: 58ns
+Multiplication: 63ns
+Division: 72ns
+Modular reduction: 51ns
+Modular exponentiation: 3.766µs
+
+Testing integer operations with 128 bits length for 100000 times...
+Addition: 68ns
+Subtraction: 67ns
+Multiplication: 76ns
+Division: 159ns
+Modular reduction: 65ns
+Modular exponentiation: 7.098µs
+
+Testing integer operations with 256 bits length for 100000 times...
+Addition: 68ns
+Subtraction: 66ns
+Multiplication: 94ns
+Division: 162ns
+Modular reduction: 64ns
+Modular exponentiation: 26.14µs
+
+Testing integer operations with 512 bits length for 100000 times...
+Addition: 72ns
+Subtraction: 75ns
+Multiplication: 149ns
+Division: 187ns
+Modular reduction: 67ns
+Modular exponentiation: 102.766µs
+
+Testing integer operations with 1024 bits length for 100000 times...
+Addition: 84ns
+Subtraction: 80ns
+Multiplication: 282ns
+Division: 215ns
+Modular reduction: 73ns
+Modular exponentiation: 547.691µs
+
+Testing integer operations with 2048 bits length for 100000 times...
+Addition: 110ns
+Subtraction: 101ns
+Multiplication: 798ns
+Division: 335ns
+Modular reduction: 92ns
+Modular exponentiation: 3.470361ms
+
+Testing integer operations with 3072 bits length for 100000 times...
+Addition: 143ns
+Subtraction: 130ns
+Multiplication: 1.816µs
+Division: 394ns
+Modular reduction: 114ns
+Modular exponentiation: 10.952351ms
+
+Testing integer operations with 4096 bits length for 100000 times...
+Addition: 175ns
+Subtraction: 156ns
+Multiplication: 2.594µs
+Division: 489ns
+Modular reduction: 147ns
+Modular exponentiation: 23.521018ms
+

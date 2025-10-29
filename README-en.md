@@ -9,6 +9,8 @@ This document benchmarks the computational cost of various operations involved i
 
 The tests are conducted on popular elliptic curves using common Go language libraries.
 
+Additionally, tests for large integer operations based on the `big.Int` library have been added.
+
 ## Symbol Convention
 
 For an algebraic structure $[S, +, \times]$, the additive inverse is denoted by $neg$, and its inverse operation is $-$. The multiplicative inverse is denoted by $inv$, and its inverse operation is $\div$. We use $\cdot$ for scalar multiplication in an additive group and $\exp$ for exponentiation (scalar multiplication) in a multiplicative group.
@@ -125,3 +127,20 @@ Test results are as follows:
 | $\mathbb{G}_T^{\exp}$, `PowZn()`  | 74.586 µs      | 875.686 µs                 | 2.73738 ms   |
 |                                   |                |                            |              |
 | $e(\cdot,\cdot)$, `Pair()`        | 523.865 µs     | 2.786758 ms                | 11.742492 ms |
+
+## big.Int large integer operations
+
+> Implemented based on the `math/big` library.
+>
+> To achieve 128-bit security for the Discrete Logarithm Problem (DLP), a large prime of about 3072 bits is required. Therefore, we tested the performance of `big.Int` integer operations with different bit lengths.
+
+Test results are as follows:
+
+| Operation Type         | 64-bit   | 128-bit  | 256-bit  | 512-bit    | 1024-bit   | 2048-bit    | 3072-bit     | 4096-bit     |
+| :--------------------- | :------- | :------- | :------- | :--------- | :--------- | :---------- | :----------- | :----------- |
+| Addition               | 70 ns    | 68 ns    | 68 ns    | 72 ns      | 84 ns      | 110 ns      | 143 ns       | 175 ns       |
+| Subtraction            | 58 ns    | 67 ns    | 66 ns    | 75 ns      | 80 ns      | 101 ns      | 130 ns       | 156 ns       |
+| Multiplication         | 63 ns    | 76 ns    | 94 ns    | 149 ns     | 282 ns     | 798 ns      | 1.816 µs     | 2.594 µs     |
+| Division               | 72 ns    | 159 ns   | 162 ns   | 187 ns     | 215 ns     | 335 ns      | 394 ns       | 489 ns       |
+| Modular reduction      | 51 ns    | 65 ns    | 64 ns    | 67 ns      | 73 ns      | 92 ns       | 114 ns       | 147 ns       |
+| Modular exponentiation | 3.766 µs | 7.098 µs | 26.14 µs | 102.766 µs | 547.691 µs | 3.470361 ms | 10.952351 ms | 23.521018 ms |

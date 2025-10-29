@@ -1,6 +1,7 @@
 package main
 
 import (
+	"main/bigint"
 	"main/gnark"
 	"main/pbc"
 )
@@ -12,4 +13,6 @@ func main() {
 	pbc.TypeA_Test()
 	pbc.TypeD_Test()
 	pbc.TypeF_Test()
+
+	bigint.Test_integer_operations()
 }
